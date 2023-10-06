@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 			// Criando uma instância de Conta01 com tipo Double para representar o saldo.
-			Conta01<Double> conta01 = new Conta01<Double>(123456.0, 654321.0, 1000.0);
+			Conta<Double> conta01 = new Conta<Double>(123456.0, 654321.0, 1000.0);
 
 			// Criando uma instância de Operações para operações com a conta.
 			OperacoesConta<Double> operacoesConta = new OperacoesConta<Double>(conta01);
