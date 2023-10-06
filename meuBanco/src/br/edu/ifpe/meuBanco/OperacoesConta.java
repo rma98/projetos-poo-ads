@@ -21,6 +21,25 @@ public class OperacoesConta<T extends Comparable<T>> {
 		}
 	}
 	
+	public void debitarConta(T valor) throws TipoNaoSuportadoException, SaldoInsuficienteException {
+		T saldoAutal = conta.getSaldo();
+		
+		// Verifica se o valor a ser debitado é positivo.
+		if (valor.compareTo(zero()) > 0) {
+			// Verifica se há saldo suficiente para o débito.
+			if (saldoAutal.compareTo(valor) >= 0) {
+				// Subtrai o valor do saldo atual.
+				T novoSaldo = subtrair(saldoAutal, valor);
+				conta.setSaldo(novoSaldo);
+				System.out.println("Débito de " + valor + "realizado com sucesso.");
+			} else {
+				throw new SaldoInsuficienteException("Saldo insuficiente para realizar o débito.");
+			}
+		} else {
+			System.out.println("O valor a ser debitado deve ser positivo.");
+		}
+	}
+	
 	public T consultarSaldo() {
 		return conta.getSaldo();
 	}
@@ -45,6 +64,17 @@ public class OperacoesConta<T extends Comparable<T>> {
 			return (T) Double.valueOf((Double) a + (Double) b);
 		} else {
 			throw new TipoNaoSuportadoException("Tipo não suportado para soma.");
+		}
+	}
+	
+	// Método auxiliar para subtrair dois valores do tipo T.
+	private T subtrair(T a, T b) throws TipoNaoSuportadoException {
+		if (a instanceof Integer && b instanceof Integer) {
+			return (T) Integer.valueOf((Integer) a - (Integer) b );
+		} else if (a instanceof Double && b instanceof Double) {
+			return (T) Double.valueOf((Double) a - (Double) b);
+		} else {
+			throw new TipoNaoSuportadoException("Tipo não suportado para subtraçaõ.");
 		}
 	}
 }
