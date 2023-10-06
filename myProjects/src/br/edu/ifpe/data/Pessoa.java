@@ -22,6 +22,16 @@ public class Pessoa {
 		
 		System.out.println("Digite o nome da pessoa: ");
 		this.nome = scanner.nextLine();
+		
+		System.out.println("Digite o ano de Nascimento (no formato yyyy-MM-dd): ");
+		this.anoNascimento = scanner.nextLine();
+		
+		System.out.println("Digite a altura da pessoa: ");
+		this.altura = scanner.nextDouble();
+		
+		scanner.nextLine(); // Consumir a nova linha deixada pelo nextDouble()
+		
+		scanner.close();
 	}
 
 	public String getNome() {
