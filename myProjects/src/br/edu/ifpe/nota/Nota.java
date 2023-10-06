@@ -2,8 +2,6 @@ package br.edu.ifpe.nota;
 
 import java.util.Scanner;
 
-import javax.print.attribute.standard.Media;
-
 public class Nota {
 	private String nome;
 	private Double nota01;
