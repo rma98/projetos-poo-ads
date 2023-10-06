@@ -14,4 +14,18 @@ public class OperacoesContaCorrente {
 			System.out.println("O valor a ser creditado deve ser positivo");
 		}
 	}
+	
+	public void debitarConta(ContaCorrente conta, Double valor) {
+		Double saldoAtual = conta.getSaldo();
+		
+		// Verifica se o valor a ser debitado é positivo e se há saldo suficiente.
+		if (valor > 0 && saldoAtual >= valor) {
+			// Subtrai o valor do saldo atual.
+			Double novoSaldo = saldoAtual - valor;
+			conta.setSaldo(novoSaldo);
+			System.out.println("Débito de " + valor + " realizado com sucesso.");
+		} else {
+			System.out.println("Valor de débito inválido ou saldo insuficiente.");
+		}
+	}
 }
