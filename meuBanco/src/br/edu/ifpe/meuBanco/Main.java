@@ -14,17 +14,24 @@ public class Main {
 			Double saldoAtual = operacoesConta.consultarSaldo();
 			System.out.println("Saldo atual: " + saldoAtual);
 
-			// Tentando creditar um valor negativo na conta (isso deverá lançar uma exceção).
-			operacoesConta.creditarConta(-500.0);
-			
 			// Creditando um valor na conta.
 			operacoesConta.creditarConta(500.0);
 			
 			// Consultando o saldo novamente após a operação de crédito.
 			saldoAtual = operacoesConta.consultarSaldo();
 			System.out.println("Saldo após crédito: " + saldoAtual);
+			
+			// Debitando um valor na conta.
+			operacoesConta.debitarConta(500.0);
+			
+			// Consultando o saldo novamente após a operação de débito.
+			saldoAtual = operacoesConta.consultarSaldo();
+			System.out.println("Saldo após débito: " + saldoAtual);
+			
 		} catch (TipoNaoSuportadoException e){
 			System.err.println("Erro ao realizar operação: " + e.getMessage());
+		} catch (SaldoInsuficienteException e) {
+			System.err.println("Erro ao debitar conta: " + e.getMessage());
 		}
 	}
 }

@@ -31,7 +31,7 @@ public class OperacoesConta<T extends Comparable<T>> {
 				// Subtrai o valor do saldo atual.
 				T novoSaldo = subtrair(saldoAutal, valor);
 				conta.setSaldo(novoSaldo);
-				System.out.println("Débito de " + valor + "realizado com sucesso.");
+				System.out.println("Débito de " + valor + " realizado com sucesso.");
 			} else {
 				throw new SaldoInsuficienteException("Saldo insuficiente para realizar o débito.");
 			}
