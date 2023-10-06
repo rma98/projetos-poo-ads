@@ -1,9 +1,9 @@
 package br.edu.ifpe.meuBanco;
 
 public class OperacoesConta<T extends Comparable<T>> {
-	private Conta<T> conta;
+	private Conta01<T> conta;
 	
-	public OperacoesConta(Conta<T> conta) {
+	public OperacoesConta(Conta01<T> conta) {
 		this.conta = conta;
 	}
 	

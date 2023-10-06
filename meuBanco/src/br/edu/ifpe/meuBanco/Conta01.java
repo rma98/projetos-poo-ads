@@ -1,11 +1,11 @@
 package br.edu.ifpe.meuBanco;
 
-public class Conta<T> {
+public class Conta01<T> {
 	private T numConta;
 	private T numAgencia;
 	private T saldo;
 	
-	public Conta(T numConta, T numAgencia, T saldo) {
+	public Conta01(T numConta, T numAgencia, T saldo) {
 		this.numConta = numConta;
 		this.numAgencia = numAgencia;
 		this.saldo = saldo;
