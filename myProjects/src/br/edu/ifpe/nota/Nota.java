@@ -7,6 +7,10 @@ public class Nota {
 	private Double nota01;
 	private Double nota02;
 	
+	public Nota() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Nota(String nome, Double nota01, Double nota02) {
 		this.nome = nome;
 		this.nota01 = nota01;
@@ -59,7 +63,7 @@ public class Nota {
 		System.out.println("Nota 2: " + getNota02());
 		
 		Double media = (getNota01() + getNota02()) / 2;
-		System.err.println("Média: " + media);
+		System.out.println("Média: " + media);
 	}
 
 	public String getNome() {
