@@ -2,7 +2,7 @@ package br.edu.ifpe.grade;
 
 import java.util.Scanner;
 
-public class Grade<T extends Comparable<T>> {
+public class Grade<T> {
 	private String nome;
 	private T nota01;
 	private T nota02;
@@ -15,6 +15,17 @@ public class Grade<T extends Comparable<T>> {
 		this.nome = nome;
 		this.nota01 = nota01;
 		this.nota02 = nota02;
+	}
+	
+	public void lerNome() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Digite o nome do aluno: ");
+		
+		String nome = scanner.nextLine();
+		setNome(nome);
+		
+		scanner.close();
 	}
 	
 	public void lerNotas() {
@@ -45,6 +56,14 @@ public class Grade<T extends Comparable<T>> {
 		} else {
 			System.out.println("Reprovado");
 		}
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public T getNota01() {
