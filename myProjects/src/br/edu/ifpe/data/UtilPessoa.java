@@ -3,7 +3,7 @@ package br.edu.ifpe.data;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class utilPessoa {
+public class UtilPessoa {
 	public static void imprimirDados(Pessoa pessoa) {
 		System.out.println("Nome: " + pessoa.getNome());
 		System.out.println("Ano de Nascimento: " + pessoa.getAnoNascimento());
