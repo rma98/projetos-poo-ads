@@ -7,6 +7,10 @@ public class Departamento {
 	private String nome;
 	private List<Funcionario> funcionarios;
 	
+	public Departamento() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Departamento(String nome) {
 		this.nome = nome;
 		this.funcionarios = new ArrayList<>();
