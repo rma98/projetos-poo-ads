@@ -30,7 +30,6 @@ public class MainAgenda {
 				} else {
 					Contato contato = new Contato(nome, telefone);
 					agenda.adicionarContato(contato);
-					System.out.println("Contato adicionado com sucesso.");
 				}
 				break;
 			case "2":

@@ -12,8 +12,15 @@ public class Agenda {
 	}
 
 	public void adicionarContato(Contato contato) {
-		contatos.add(contato);
+	    // Verifique se o telefone já existe na lista antes de adicionar o contato
+	    if (!telefoneExistente(contato.getTelefone())) {
+	        System.out.println("Telefone já existe na lista. Não pode ser adicionado.");
+	    } else {
+	        contatos.add(contato);
+	        System.out.println("Contato adicionado com sucesso.");
+	    }
 	}
+
 
 	public Contato consultarContato(String nome) {
 		for (Contato contato: contatos) {
@@ -43,14 +50,14 @@ public class Agenda {
 	public boolean excluirContato(String nome) {
 		return contatos.removeIf(contato -> contato.getNome().equalsIgnoreCase(nome));
 	}
-
-	// Verifica se um telefone já existe na lista de contatos
+	
 	private boolean telefoneExistente(String telefone) {
-		for (Contato contato : contatos) {
-			if (contato.getTelefone().equalsIgnoreCase(telefone)) {
-				return true;
-			}
-		}
-		return false;
+	    for (Contato contato : contatos) {
+	        if (contato.getTelefone().equalsIgnoreCase(telefone)) {
+	            return false; // Telefone já existe na lista
+	        }
+	    }
+	    return true; // Telefone não existe na lista
 	}
+
 }
