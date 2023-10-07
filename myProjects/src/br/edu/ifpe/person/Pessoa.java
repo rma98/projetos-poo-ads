@@ -6,6 +6,7 @@ public abstract class Pessoa {
 	private String genero;
 	
 	public Pessoa() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 	
