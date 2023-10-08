@@ -1,36 +1,36 @@
 package br.edu.ifpe.draw;
 
 public class Retangulo extends Forma {
-	private int base;
-	private int altura;
+	private Double comprimento;
+	private Double largura;
 	
-	public Retangulo(int base, int altura) {
-		this.base = base;
-		this.altura = altura;
+	public Retangulo(Double comprimento, Double largura) {
+		this.comprimento = comprimento;
+		this.largura = largura;
 	}
 	
 	@Override
 	public double calcularArea() {
-		int base = getBase();
-		int altura = getAltura();
-		int area = base * altura;
+		Double comprimento = getComprimento();
+		Double largura = getLargura();
+		Double area = comprimento * largura;
 		return area;
 	}
 
-	public int getBase() {
-		return base;
+	public Double getComprimento() {
+		return comprimento;
 	}
 
-	public void setBase(int base) {
-		this.base = base;
+	public void setComprimento(Double comprimento) {
+		this.comprimento = comprimento;
 	}
 
-	public int getAltura() {
-		return altura;
+	public Double getLargura() {
+		return largura;
 	}
 
-	public void setAltura(int altura) {
-		this.altura = altura;
+	public void setLargura(Double largura) {
+		this.largura = largura;
 	}
 	
 }

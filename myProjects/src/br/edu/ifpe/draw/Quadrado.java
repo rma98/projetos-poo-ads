@@ -1,36 +1,25 @@
 package br.edu.ifpe.draw;
 
 public class Quadrado extends Forma {
-	private int base;
-	private int altura;
+	private Double lado;
 	
-	public Quadrado(int base, int altura) {
-		this.base = base;
-		this.altura = altura;
+	public Quadrado(Double lado) {
+		this.lado = lado;
 	}
 	
 	@Override
 	public double calcularArea() {
-		int base = getBase();
-		int altura = getAltura();
-		int area = base * altura;
+		Double lado = getLado();
+		Double area = lado * lado;
 		return area;
 	}
 
-	public int getBase() {
-		return base;
+	public Double getLado() {
+		return lado;
 	}
 
-	public void setBase(int base) {
-		this.base = base;
-	}
-
-	public int getAltura() {
-		return altura;
-	}
-
-	public void setAltura(int altura) {
-		this.altura = altura;
+	public void setLado(Double lado) {
+		this.lado = lado;
 	}
 	
 }
