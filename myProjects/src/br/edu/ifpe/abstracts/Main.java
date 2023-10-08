@@ -38,11 +38,11 @@ public class Main {
 		String opc = scanner.nextLine();
 		switch (opc) {
 		case "1":
-			Gerente gerente = new Gerente("Maria", 20000.0);
+			Funcionario gerente = new Gerente("Maria", 20000.0);
 			imprimirDados(gerente);
 			break;
 		case "2":
-			Programador programador = new Programador("Marcos", 10000.0);
+			Funcionario programador = new Programador("Marcos", 10000.0);
 			imprimirDados(programador);
 			break;
 		case "0":
