@@ -25,5 +25,5 @@ public abstract class Funcionario {
 		this.salario = salario;
 	}
 	
-	public abstract Double aumentarSalario();
+	public abstract void aumentarSalario();
 }

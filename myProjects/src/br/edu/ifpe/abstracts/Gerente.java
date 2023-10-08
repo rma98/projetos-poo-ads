@@ -8,11 +8,8 @@ public class Gerente extends Funcionario {
 	}
 
 	@Override
-	public Double aumentarSalario() {
-		Double salario = getSalario();
-		Double aumento = salario * 15 / 100;
-		Double novoSalario = salario + aumento;
-		return novoSalario;
+	public void aumentarSalario() {
+		setSalario(getSalario() + (getSalario() * 10 / 100));
 	}
 
 }

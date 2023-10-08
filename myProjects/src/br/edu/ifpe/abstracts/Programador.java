@@ -8,11 +8,8 @@ public class Programador extends Funcionario {
 	}
 
 	@Override
-	public Double aumentarSalario() {
-		Double salario = getSalario();
-		Double aumento = salario * 10 / 100;
-		Double novoSalario = salario + aumento;
-		return novoSalario;
+	public void aumentarSalario() {
+		setSalario(getSalario() + (getSalario() * 20 / 100));
 	}
 
 }
