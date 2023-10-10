@@ -47,5 +47,4 @@ public class Main {
 		}
 		System.out.println("\nNomes dos alunos com média acima da turma: " + acimaMediaTurma);
 	}
-
 }
