@@ -20,7 +20,7 @@ public class Main {
 		turmas.add(new Student("Aluno 09", 9, 6.0));
 		turmas.add(new Student("Aluno 10", 10, 7.2));
 		
-		System.err.println("\nNomes de todos os alunos:");
+		System.out.println("\nNomes de todos os alunos:");
 		for (Student student : turmas) {
 			System.out.println(student.nome);
 		}
