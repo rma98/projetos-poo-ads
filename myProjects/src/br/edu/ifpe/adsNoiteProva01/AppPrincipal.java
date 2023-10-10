@@ -5,6 +5,7 @@ import java.util.List;
 
 public class AppPrincipal {
 	
+	static List<Pessoa> pessoas = new ArrayList<>();
 	static List<Reserva> reservas = new ArrayList<>();
 	static List<Quarto> quartos = new ArrayList<>();
 
@@ -22,10 +23,10 @@ public class AppPrincipal {
 		
 		Pessoa funcionario = new Funcionario("Paulo", "1472583", "Recepção");
 		
-		Reserva reserva = new Reserva("2023-09-25");
-		Reserva reserva2 = new Reserva("2023-09-25");
+		pessoas.add(funcionario);
 		
-		reserva.setFuncionario((Funcionario) funcionario);
+		Reserva reserva = new Reserva("2023-09-25", (Funcionario) funcionario);
+		Reserva reserva2 = new Reserva("2023-09-25", (Funcionario) funcionario);
 		
 		reserva.getQuartos().add(quarto);
 		reserva.getQuartos().add(quarto2);
@@ -35,22 +36,30 @@ public class AppPrincipal {
 		
 		Pessoa cliente = new Cliente("Maria", "3692581", 1);
 		
+		pessoas.add(cliente);
+		
+		
 		cliente.getReservas().add(reserva);
 		
-		for (Reserva cl1 : cliente.getReservas()) {
-			System.out.println("------------------------------------------------------------");
-			System.out.println("Nome do cliente: " + cliente.getNome());
-			System.out.println("Rg: " + cliente.getRg());
-			System.out.println("Data da reserva: " + cl1.getData());
-			System.out.println("------------------------------------------------------------");
-			System.out.println("Nome do funcionário: " + cl1.getFuncionario().getNome());
-			for (Quarto quar : cl1.getQuartos()) {
-				System.out.println("------------------------------------------------------------");
-				System.out.println("Nome do Hotel: " + quar.getHotel().getNome());
-				System.out.println("Número do Quarto: " + quar.getNumeroDoQuarto());
-				System.out.println("Tipo do quarto: " + quar.getTipo());
+		for (Pessoa p : pessoas) {
+			if (p instanceof Cliente) {
+				System.out.println("------------------ CLIENTE -----------------------");
+				System.out.println("Nome: " + p.getNome());
+				System.out.println("RG: " + p.getRg());
+				Cliente cl = (Cliente) p;
+				System.out.println("Tipo de Cliente: " + cl.getQuantidadeOcupacoes());
 			}
-			System.out.println("------------------------------------------------------------");
+			for (Reserva r : p.getReservas()) {
+				System.out.println("------------------ RESERVAS -----------------------");
+				System.out.println("Data da Reserva: " + r.getData());
+				System.out.println("Nome do funcionário que realizou o atendimento: " + r.getFuncionario().getNome());
+				for (Quarto q : r.getQuartos()) {
+					System.out.println("------------------ QUARTOS -----------------------");
+					System.out.println("Nome do Hotel: " + q.getHotel().getNome());
+					System.out.println("Número do quarto: " + q.getNumeroDoQuarto());
+					System.out.println("Tipo de Quarto: " + q.getTipo());
+				}
+			}
 		}
 		
 	}

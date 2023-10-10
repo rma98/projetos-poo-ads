@@ -12,8 +12,9 @@ public class Reserva {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Reserva(String data) {
+	public Reserva(String data, Funcionario funcionario) {
 		this.data = data;
+		this.funcionario = funcionario;
 		this.quartos = new ArrayList<>();
 	}
 
