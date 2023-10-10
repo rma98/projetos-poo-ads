@@ -15,10 +15,6 @@ public class Departamento {
 		this.nome = nome;
 		this.funcionarios = new ArrayList<>();
 	}
-	
-	public void adicionarFuncionario(Funcionario funcionario) {
-		funcionarios.add(funcionario);
-	}
 
 	public String getNome() {
 		return nome;
