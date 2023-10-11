@@ -1,7 +1,7 @@
 package br.edu.ifpe.listagenerica;
 
 public class ListaGenerica<T> {
-	private int DEFAULT_CAPACITY = 0;
+	private int DEFAULT_CAPACITY = 10;
 	private Object[] array;
 	private int size;
 	
