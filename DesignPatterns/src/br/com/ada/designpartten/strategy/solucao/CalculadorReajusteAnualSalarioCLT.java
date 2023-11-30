@@ -12,5 +12,4 @@ public class CalculadorReajusteAnualSalarioCLT implements CalculadorReajusteAnua
 		funcionario.setSalario(salario.add(salario.multiply(new BigDecimal(0.10))));
 	}
 
-	
 }
